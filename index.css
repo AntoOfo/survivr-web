@@ -13,6 +13,21 @@ h1 {
     color: white;
 }
 
+h2 {
+    color: white;
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.0rem;
+}
+
+p {
+    color: white;
+    opacity:calc(80%);
+    font-weight: 200;
+    font-size: 0.8rem;
+    line-height: 18px;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -43,3 +58,27 @@ header > button {
 header > button > img {
     width: 20px;
 }
+
+.card {
+    display: flex;
+    width: 28%;
+    height: 20%;
+    background-color: #2A2A2A;
+    padding: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
+}
+
+.card > img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    margin-right: 14px;
+    border-radius: 12px;
+}
+
+.card-right-side {
+    margin-top: 4px;
+}
+
