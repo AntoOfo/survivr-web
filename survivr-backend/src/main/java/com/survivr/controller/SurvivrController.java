@@ -28,7 +28,7 @@ public class SurvivrController {
           "model": "llama-3.3-70b-versatile",
           "messages": [{
             "role": "user",
-            "content": "Give me 9 life-saving survival tips in JSON format, each with a title, bio (159-170 characters), and a relating image link."
+            "content": "Give me 9 life-saving survival tips in JSON format. Each should include a title, bio (159-170 characters), a relating image link and category (choose from 'Survival', 'Health', 'City Safety', 'Prep'). The content of the tip must fit its category."
           }]
         }
         """;
