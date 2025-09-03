@@ -63,19 +63,20 @@ header > button > img {
     display: flex;
     width: 100%;
     height: auto;
+    box-sizing: border-box;
     background-color: #2A2A2A;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
 }
 
 .card > img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: auto;
     object-fit: cover;
     margin-right: 14px;
-    border-radius: 12px;
+    border-radius: 8px;
 }
 
 .card-right-side {
@@ -94,6 +95,6 @@ main {
     display: grid;
     align-items: start;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 70px;
-    row-gap: 50px;
+    column-gap: 50px;
+    row-gap: 40px;
 }
