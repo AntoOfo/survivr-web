@@ -61,7 +61,7 @@ header > button > img {
 
 .card {
     display: flex;
-    width: 28%;
+    width: 100%;
     height: 20%;
     background-color: #2A2A2A;
     padding: 12px;
@@ -82,3 +82,8 @@ header > button > img {
     margin-top: 4px;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}

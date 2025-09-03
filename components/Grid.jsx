@@ -2,6 +2,16 @@ import Card from "./Card"
 
 export default function Grid() {
     return (
-        <Card />
+        <div className="grid">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+        </div>
     )
 }
