@@ -62,13 +62,19 @@ header > button > img {
 .card {
     display: flex;
     width: 100%;
-    height: auto;
+    height: 145px;
     box-sizing: border-box;
     background-color: #2A2A2A;
     padding: 12px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
+    transition: 0.2s;
+}
+
+.card:hover {
+    scale: 103%;
+    cursor:pointer;
 }
 
 .card > img {
@@ -81,6 +87,10 @@ header > button > img {
 
 .card-right-side {
     margin-top: 4px;
+}
+
+.card-right-side > p {
+    
 }
 
 main {
