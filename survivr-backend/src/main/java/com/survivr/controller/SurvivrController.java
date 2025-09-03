@@ -32,6 +32,14 @@ public class SurvivrController {
           }]
         }
         """;
+        
+        return webClient.post()
+                .uri("https://api.groq.com/openai/v1/chat/completions")
+                .header("Authorization", "Bearer " + groqApiKey)
+                .header("Content-Type", "application/json")
+                .bodyValue(request)
+                .retrieve()
+                .bodyToMono(String.class);
     }
     
 }
