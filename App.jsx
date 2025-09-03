@@ -1,11 +1,11 @@
 import Header from "./components/Header"
-import Card from "./components/Card"
+import Grid from "./components/Grid"
 
 export default function App() {
   return (
     <>
     <Header />
-    <Card />
+    <Grid />
     </>
   )
 }
