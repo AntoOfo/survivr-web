@@ -21,4 +21,17 @@ public class SurvivrController {
     
     private final WebClient webClient = WebClient.create();
     
+    @GetMapping("/lifehacks")
+    public Mono<String> getLife() {
+        String request = """
+        {
+          "model": "llama-3.3-70b-versatile",
+          "messages": [{
+            "role": "user",
+            "content": "Give me 9 life-saving survival tips in JSON format, each with a title, bio (159-170 characters), and a relating image link."
+          }]
+        }
+        """;
+    }
+    
 }
