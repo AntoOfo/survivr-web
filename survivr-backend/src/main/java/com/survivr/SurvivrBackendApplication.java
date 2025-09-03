@@ -8,6 +8,7 @@ public class SurvivrBackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SurvivrBackendApplication.class, args);
+                // test
 	}
 
 }
