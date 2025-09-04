@@ -27,6 +27,13 @@ public class SurvivrController {
     private final WebClient webClient = WebClient.create();
     private final ObjectMapper objectMapper = new ObjectMapper();
     
+    public static class LifeHack {
+        public String title;
+        public String bio;
+        public String image;
+        public String category;
+    }
+    
     @GetMapping("/lifehacks")
     public Mono<String> getLife() {
         String request = """
