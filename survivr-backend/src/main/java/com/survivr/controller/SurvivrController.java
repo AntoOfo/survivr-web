@@ -21,6 +21,9 @@ public class SurvivrController {
     @Value("${groq.api.key}")
     private String groqApiKey;
     
+    @Value("${pexels.api.key}")
+    private String pexelsApiKey;
+    
     private final WebClient webClient = WebClient.create();
     private final ObjectMapper objectMapper = new ObjectMapper();
     
