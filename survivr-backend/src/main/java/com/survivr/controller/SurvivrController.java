@@ -46,21 +46,22 @@ public class SurvivrController {
         }
         """;
         
-        return webClient.post()
+        String response = WebClient.create()
+                .post()
                 .uri("https://api.groq.com/openai/v1/chat/completions")
                 .header("Authorization", "Bearer " + groqApiKey)
                 .header("Content-Type", "application/json")
                 .bodyValue(request)
                 .retrieve()
                 .bodyToMono(String.class)
-                .map(response -> {
-                    try {
-                        JsonNode node = objectMapper.readTree(response);
-                        return node.path("choices").get(0).path("message").path("content").asText().replaceAll("```(json)?", "").trim();
-                    } catch (Exception e) {
-                        return "Error bro";
-                    }
-                });
+                .block();
+        
+        String aiJson = objectMapper.readTree(response)
+                .path("choices").get(0)
+                .path("message").path("content")
+                .asText().replaceAll("```(json)?", "").trim();
+        
+        
     }
     
 }
