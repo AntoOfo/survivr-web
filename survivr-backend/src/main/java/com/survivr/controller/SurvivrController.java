@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import reactor.core.publisher.Mono;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  *
@@ -20,6 +22,7 @@ public class SurvivrController {
     private String groqApiKey;
     
     private final WebClient webClient = WebClient.create();
+    private final ObjectMapper objectMapper = new ObjectMapper();
     
     @GetMapping("/lifehacks")
     public Mono<String> getLife() {
@@ -39,7 +42,15 @@ public class SurvivrController {
                 .header("Content-Type", "application/json")
                 .bodyValue(request)
                 .retrieve()
-                .bodyToMono(String.class);
+                .bodyToMono(String.class)
+                .map(response -> {
+                    try {
+                        JsonNode node = objectMapper.readTree(response);
+                        return node.path("choices").get(0).path("message").path("content").asText().replaceAll("```(json)?", "").trim();
+                    } catch (Exception e) {
+                        return "Error bro";
+                    }
+                });
     }
     
 }
