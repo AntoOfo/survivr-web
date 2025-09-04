@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 @RestController
 public class SurvivrController {
     
-    @Value("${groq.api.key")
+    @Value("${groq.api.key}")
     private String groqApiKey;
     
     private final WebClient webClient = WebClient.create();
