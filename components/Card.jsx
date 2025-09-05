@@ -1,16 +1,12 @@
 import Placeholder from "../images/helpimg.jpg"
 
-export default function Card() {
+export default function Card({img, title, bio}) {
     return (
         <div className="card">
-            <img src={Placeholder} />
+            <img src={img} />
             <div className="card-right-side">
-            <h2>Signal for Help</h2>
-            <p>
-                If you’re lost without cell service, three short signals (whistle blasts, shouts, or flashes) 
-                is the universal distress call.  
-                Pause, then repeat until spotted.
-            </p>
+            <h2>{title}</h2>
+            <p>{bio}</p>
             </div>
         </div>
     )
