@@ -66,7 +66,32 @@ public class SurvivrController {
 
                     LifeHack[] tips = objectMapper.readValue(aiJson, LifeHack[].class);
                     
-                    
+                    // for each tip, call pexels api (function will be made)
+                    List<Mono<LifeHack>> newTips = Arrays.stream(tips)
+                            .map(tip -> webClient.get()
+                                    .uri(uriBuilder -> uriBuilder
+                                            .scheme("https")
+                                            .host("api.pexels.com")
+                                            .path("/v1/search")
+                                            .queryParam("query", tip.title)
+                                            .queryParam("per_page", 1)
+                                            .build())
+                                    .header("Authorization", pexelsApiKey)
+                                    .retrieve()
+                                    .bodyToMono(String.class)
+                                    .map(pexelsResponse -> {
+                                        try {
+                                            JsonNode imgNode = objectMapper.readTree(pexelsResponse)
+                                                    .path("photos").get(0)
+                                                    .path("src")
+                                                    .path("medium");
+                                            tip.image = imgNode.asText();
+                                        } catch (Exception e) {
+                                            tip.image = ""; // will add placeholder img here for fallbacks
+                                        }
+                                        return tip;
+                                    })
+                            ).toList();
 
                 } catch (Exception e) {
                     e.printStackTrace();
