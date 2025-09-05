@@ -20,7 +20,14 @@ export default function Grid() {
         <main>
             <h2 className="grid-title">Today's Picks</h2>
             <div className="grid">
-                <Card />
+                {hacks.map((hack, i) => (
+                    <Card 
+                        key={i}
+                        img={hack.image}
+                        title={hack.title}
+                        bio={hack.bio}/>
+                ))}
+                
             </div>
         </main>
     )
