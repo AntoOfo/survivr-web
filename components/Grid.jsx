@@ -5,11 +5,17 @@ export default function Grid() {
 
     const [hacks, setHacks] = useState([]);
 
-    useEffect(() =>
+    useEffect(() => {
         // call api
         fetch("http://localhost:8080/lifehacks")
             .then((res) => res.json())  // convert 2 json
-            .then)
+            .then((data) => {
+                // save in lifehacks as state
+                setHacks(data);
+            })
+            .catch((err) => console.error("Error getting hacks:", err));
+}, []);
+
     return (
         <main>
             <h2 className="grid-title">Today's Picks</h2>
