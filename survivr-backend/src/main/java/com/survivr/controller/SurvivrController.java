@@ -92,6 +92,13 @@ public class SurvivrController {
                                         return tip;
                                     })
                             ).toList();
+                    
+                    // merge em all into one list
+                    return Mono.zip(newTips, results ->
+                            Arrays.stream(results)
+                                    .map(obj -> (LifeHack) obj)
+                                    .toList()
+                    );
 
                 } catch (Exception e) {
                     e.printStackTrace();
