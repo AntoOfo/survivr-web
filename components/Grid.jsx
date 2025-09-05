@@ -3,6 +3,12 @@ import Card from "./Card"
 
 export default function Grid() {
 
+    // current date
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
     const [hacks, setHacks] = useState([]);
 
     useEffect(() => {

@@ -78,8 +78,7 @@ header > button > img {
 }
 
 .card > img {
-    width: 120px;
-    height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     margin-right: 14px;
     border-radius: 8px;
