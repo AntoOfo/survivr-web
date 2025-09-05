@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import reactor.core.publisher.Mono;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  *
@@ -35,7 +38,7 @@ public class SurvivrController {
     }
     
     @GetMapping("/lifehacks")
-    public Mono<String> getLife() {
+    public Mono<List<LifeHack>> getLife() {
         String request = """
         {
           "model": "llama-3.3-70b-versatile",
@@ -46,7 +49,7 @@ public class SurvivrController {
         }
         """;
         
-        String response = WebClient.create()
+        return webClient
                 .post()
                 .uri("https://api.groq.com/openai/v1/chat/completions")
                 .header("Authorization", "Bearer " + groqApiKey)
@@ -54,14 +57,21 @@ public class SurvivrController {
                 .bodyValue(request)
                 .retrieve()
                 .bodyToMono(String.class)
-                .block();
-        
-        String aiJson = objectMapper.readTree(response)
-                .path("choices").get(0)
-                .path("message").path("content")
-                .asText().replaceAll("```(json)?", "").trim();
-        
-        
-    }
-    
+                .flatMap(response -> {
+                    try{
+                       String aiJson = objectMapper.readTree(response)
+                            .path("choices").get(0)
+                            .path("message").path("content")
+                            .asText().replaceAll("```(json)?", "").trim();
+
+                    LifeHack[] tips = objectMapper.readValue(aiJson, LifeHack[].class);
+                    
+                    
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return Mono.just(Collections.emptyList());
+                }
+            });
 }
+    }
