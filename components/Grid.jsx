@@ -6,6 +6,7 @@ export default function Grid() {
     const [hacks, setHacks] = useState([]);
 
     useEffect(() => {
+        console.log("Making api call..");
         // call api
         fetch("http://localhost:8080/lifehacks")
             .then((res) => res.json())  // convert 2 json

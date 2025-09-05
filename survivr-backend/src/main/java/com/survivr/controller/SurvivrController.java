@@ -13,12 +13,14 @@ import com.fasterxml.jackson.databind.JsonNode;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 /**
  *
  * @author anton
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 public class SurvivrController {
     
     @Value("${groq.api.key}")
