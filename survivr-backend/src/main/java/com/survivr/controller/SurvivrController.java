@@ -46,6 +46,14 @@ public class SurvivrController {
     
     @GetMapping("/lifehacks")
     public Mono<List<LifeHack>> getLife() {
+        LocalDate today = LocalDate.now();
+        
+        // if alr fetched tday, just return cached
+        if (lastFetchDate != null && lastFetchDate.equals(today) && cachedHacks != null) {
+            return Mono.just(cachedHacks);
+        }
+        
+        // otherwise, call api for new ones
         String request = """
         {
           "model": "llama-3.3-70b-versatile",
@@ -101,11 +109,16 @@ public class SurvivrController {
                             ).toList();
                     
                     // merge em all into one list
-                    return Mono.zip(newTips, results ->
-                            Arrays.stream(results)
+                    return Mono.zip(newTips, results -> {
+                        List<LifeHack> hacks = Arrays.stream(results)
                                     .map(obj -> (LifeHack) obj)
-                                    .toList()
-                    );
+                                    .toList();
+                        
+                        // update the cache
+                        cachedHacks = hacks;
+                        lastFetchDate = today;
+                        return hacks;
+                      });
 
                 } catch (Exception e) {
                     e.printStackTrace();
