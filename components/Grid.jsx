@@ -25,7 +25,7 @@ export default function Grid() {
 
     // for search query
     const filteredHacks = hacks.filter((hack) =>
-        hack.title.includes(searchQuery));
+        hack.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
     return (
         <main>
