@@ -23,6 +23,10 @@ export default function Grid() {
             .catch((err) => console.error("Error getting hacks:", err));
 }, []);
 
+    // for search query
+    const filteredHacks = hacks.filter((hack) =>
+        hack.title.includes(searchQuery));
+
     return (
         <main>
             <h2 className="grid-title">Today's Picks - {month}/{day}/{year}</h2>
