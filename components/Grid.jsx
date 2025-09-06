@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
 
-export default function Grid() {
+export default function Grid({searchQuery}) {
 
     // current date
     const date = new Date();
@@ -31,7 +31,7 @@ export default function Grid() {
         <main>
             <h2 className="grid-title">Today's Picks - {month}/{day}/{year}</h2>
             <div className="grid">
-                {hacks.map((hack, i) => (
+                {filteredHacks.map((hack, i) => (
                     <Card 
                         key={i}
                         img={hack.image}
