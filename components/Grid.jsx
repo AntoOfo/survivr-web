@@ -25,7 +25,7 @@ export default function Grid() {
 
     return (
         <main>
-            <h2 className="grid-title">Today's Picks</h2>
+            <h2 className="grid-title">Today's Picks - {month}/{day}/{year}</h2>
             <div className="grid">
                 {hacks.map((hack, i) => (
                     <Card 

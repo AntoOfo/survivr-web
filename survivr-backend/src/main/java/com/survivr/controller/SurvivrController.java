@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import reactor.core.publisher.Mono;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,6 +33,10 @@ public class SurvivrController {
     private final WebClient webClient = WebClient.create();
     private final ObjectMapper objectMapper = new ObjectMapper();
     
+    // cached list n date
+    private List<LifeHack> cachedHacks = null;
+    private LocalDate lastFetchDate = null;
+            
     public static class LifeHack {
         public String title;
         public String bio;
