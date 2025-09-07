@@ -80,6 +80,11 @@ header > button:active {
     color: rgb(210, 210, 210);
 }
 
+.dropdown li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
 .card {
     display: flex;
     width: 100%;
