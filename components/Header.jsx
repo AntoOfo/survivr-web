@@ -22,6 +22,18 @@ export default function Header({searchQuery, setSearchQuery}) {
             <button onClick={toggleDropdown}>
                 <img src={FilterIcon}/>
             </button>
+
+            {showDropdown && (
+                <div className="dropdown">
+                    <ul>
+                        <li>All</li>
+                        <li>Survival</li>
+                        <li>Health</li>
+                        <li>City Safety</li>
+                        <li>Prep</li>
+                    </ul>
+                </div>
+            )}
         </header>
     )
 }
