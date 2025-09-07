@@ -1,5 +1,6 @@
 import { useState } from "react"
 import FilterIcon from "../images/filter.png"
+import CloseIcon from "../images/close.png"
 
 export default function Header({searchQuery, setSearchQuery}) {
 
@@ -25,6 +26,7 @@ export default function Header({searchQuery, setSearchQuery}) {
 
             {showDropdown && (
                 <div className="dropdown">
+                    <img src={CloseIcon} />
                     <ul>
                         <li>All</li>
                         <li>Survival</li>

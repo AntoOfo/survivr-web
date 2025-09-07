@@ -76,6 +76,11 @@ header > button:active {
     z-index: 1000;
 }
 
+.dropdown img {
+    width: 3%;
+    height: 4%;
+}
+
 .dropdown ul {
     list-style: none;
     margin: 0;
