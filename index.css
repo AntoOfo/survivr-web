@@ -68,10 +68,11 @@ header > button:active {
     position: absolute;
     top: 80px; 
     right: 35px;
-    width: 6%;
+    width: 7%;
     background: #3e3e3e;
     border-radius: 12px;
     padding: 0.5rem;
+    z-index: 1000;
 }
 
 .dropdown ul {
