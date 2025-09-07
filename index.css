@@ -65,10 +65,11 @@ header > button:active {
 }
 
 .dropdown {
-    position: absolute;
-    top: 80px; 
-    right: 35px;
-    width: 7%;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
     background: #3e3e3e;
     border-radius: 12px;
     padding: 0.5rem;
