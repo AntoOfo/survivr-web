@@ -6,6 +6,9 @@ export default function Header({searchQuery, setSearchQuery}) {
     // track dropdown status
     const [showDropdown, setShowDropdown] = useState(false)
 
+    function toggleDropdown() {
+        setShowDropdown((prev) => !prev)  // flips boolean state
+    }
 
     return (
         <header>
@@ -16,7 +19,7 @@ export default function Header({searchQuery, setSearchQuery}) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}  // updates searchQuery
                 />
-            <button>
+            <button onClick={toggleDropdown}>
                 <img src={FilterIcon}/>
             </button>
         </header>
