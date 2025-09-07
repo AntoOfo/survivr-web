@@ -54,9 +54,14 @@ header > button {
     height: 45px;
     width: 7%;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
+    transition: 0.2s;
 }
 header > button > img {
     width: 20px;
+}
+
+header > button:active {
+    transform: scale(0.95);
 }
 
 .card {
