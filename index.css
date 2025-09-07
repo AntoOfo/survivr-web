@@ -64,6 +64,22 @@ header > button:active {
     transform: scale(0.95);
 }
 
+.dropdown {
+    position: absolute;
+    top: 60px; 
+    right: 10px;
+    background: #3e3e3e;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgb(210, 210, 210);
+}
+
 .card {
     display: flex;
     width: 100%;
