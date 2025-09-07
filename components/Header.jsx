@@ -26,7 +26,7 @@ export default function Header({searchQuery, setSearchQuery}) {
 
             {showDropdown && (
                 <div className="dropdown">
-                    <img src={CloseIcon} />
+                    <img src={CloseIcon} onClick={toggleDropdown}/>
                     <ul>
                         <li>All</li>
                         <li>Survival</li>
