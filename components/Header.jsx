@@ -1,6 +1,12 @@
+import { useState } from "react"
 import FilterIcon from "../images/filter.png"
 
 export default function Header({searchQuery, setSearchQuery}) {
+
+    // track dropdown status
+    const [showDropdown, setShowDropdown] = useState(false)
+
+
     return (
         <header>
             <h1>SURVIVR</h1>
