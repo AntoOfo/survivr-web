@@ -30,6 +30,8 @@ export default function Header({searchQuery, setSearchQuery, selectedCategory, s
             </button>
 
             {showDropdown && (
+                <>
+                <div className="dropdown-overlay" onClick={toggleDropdown}></div>
                 <div className="dropdown">
                     <img src={CloseIcon} onClick={toggleDropdown}/>
                     <ul>
@@ -40,6 +42,7 @@ export default function Header({searchQuery, setSearchQuery, selectedCategory, s
                         <li key="Prep" onClick={() => chooseCategory("Prep")}>Prep</li>
                     </ul>
                 </div>
+                </>
             )}
         </header>
     )
