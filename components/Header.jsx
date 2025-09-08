@@ -2,13 +2,18 @@ import { useState } from "react"
 import FilterIcon from "../images/filter.png"
 import CloseIcon from "../images/close.png"
 
-export default function Header({searchQuery, setSearchQuery}) {
+export default function Header({searchQuery, setSearchQuery, selectedCategory, setSelectedCategory}) {
 
     // track dropdown status
     const [showDropdown, setShowDropdown] = useState(false)
 
     function toggleDropdown() {
         setShowDropdown((prev) => !prev)  // flips boolean state
+    }
+
+    function chooseCategory(category) {
+        setSelectedCategory(category);  // updates selected category
+        setShowDropdown(false);
     }
 
     return (
