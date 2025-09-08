@@ -64,6 +64,11 @@ header > button:active {
     transform: scale(0.95);
 }
 
+header > button:hover {
+    cursor: pointer;
+    transform: scale(103%);
+}
+
 .dropdown-overlay {
     position: fixed;
     top: 0;
@@ -74,7 +79,7 @@ header > button:active {
     background-color: rgba(0,0,0,0.3);
     z-index: 999;
 
-    animation: blurFade 0.3s forwards;
+    animation: blurFade 0.2s forwards;
 }
 
 @keyframes blurFade {
