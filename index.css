@@ -81,6 +81,15 @@ header > button:active {
     position: absolute;
     top: 8%;
     right: 3%;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.dropdown img:hover {
+    background-color: #2e2e2e8a;
+}
+.dropdown img:active {
+    transform: scale(0.95);
 }
 
 .dropdown ul {
@@ -97,7 +106,7 @@ header > button:active {
 }
 
 .dropdown li:hover {
-  background: #2e2e2e;
+  background: #2e2e2e8a;
 }
 
 .card {
