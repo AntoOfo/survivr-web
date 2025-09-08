@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
 
-export default function Grid({searchQuery}) {
+export default function Grid({searchQuery, selectedCategory}) {
 
     // current date
     const date = new Date();
@@ -24,8 +24,12 @@ export default function Grid({searchQuery}) {
 }, []);
 
     // for search query
-    const filteredHacks = hacks.filter((hack) =>
-        hack.title.toLowerCase().includes(searchQuery.toLowerCase()));
+    const filteredHacks = hacks.filter((hack) => {
+        const matchesSearch = hack.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesCategory = selectedCategory === "All" || hack.category === selectedCategory
+
+        return matchesSearch && matchesCategory
+    });
 
     return (
         <main>
