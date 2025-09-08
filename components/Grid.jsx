@@ -56,14 +56,21 @@ export default function Grid({searchQuery, selectedCategory}) {
             <h2 className="grid-title">Today's Picks - {month}/{day}/{year}</h2>
             <div className="grid">
                 {filteredHacks.map((hack, i) => (
-                    <Card 
+                    <Card
                         key={i}
                         img={hack.image}
                         title={hack.title}
-                        bio={hack.bio}/>
+                        bio={hack.bio}
+                        onClick={toggleFact}/>
                 ))}
                 
             </div>
+
+            {showFact && (
+                <div className="fact">
+                    <h2>Fun fact: This is just a test lol.</h2>
+                </div>
+            )}
         </main>
     )
 }
