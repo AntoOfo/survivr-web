@@ -39,7 +39,7 @@ export default function Grid({searchQuery, selectedCategory}) {
 
     if (loading) {
         return (
-            <div>
+            <div className="loader-container">
                 <div className="loader"></div>
             </div>
         )

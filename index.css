@@ -192,3 +192,13 @@ main {
     column-gap: 50px;
     row-gap: 40px;
 }
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    border: 6px solid #2A2A2A;
+    border-top: 6px solid white;
+}
