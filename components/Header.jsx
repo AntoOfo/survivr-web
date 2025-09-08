@@ -33,11 +33,11 @@ export default function Header({searchQuery, setSearchQuery, selectedCategory, s
                 <div className="dropdown">
                     <img src={CloseIcon} onClick={toggleDropdown}/>
                     <ul>
-                        <li>All</li>
-                        <li>Survival</li>
-                        <li>Health</li>
-                        <li>City Safety</li>
-                        <li>Prep</li>
+                        <li key="All" onClick={() => chooseCategory("All")}>All</li>
+                        <li key="Survival" onClick={() => chooseCategory("Survival")}>Survival</li>
+                        <li key="Health" onClick={() => chooseCategory("Health")}>Health</li>
+                        <li key="City Safety" onClick={() => chooseCategory("City Safety")}>City Safety</li>
+                        <li key="Prep" onClick={() => chooseCategory("Prep")}>Prep</li>
                     </ul>
                 </div>
             )}
