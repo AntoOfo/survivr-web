@@ -11,6 +11,8 @@ export default function Grid({searchQuery, selectedCategory}) {
 
     const [hacks, setHacks] = useState([]);
 
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
         console.log("Making api call..");
         // call api
