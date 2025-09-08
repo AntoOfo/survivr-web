@@ -13,6 +13,12 @@ export default function Grid({searchQuery, selectedCategory}) {
 
     const [loading, setLoading] = useState(true);
 
+    const [showFact, setShowfact] = useState(false);
+
+    function toggleFact() {
+        setShowfact((prev) => !prev)
+    }
+
     useEffect(() => {
         console.log("Making api call..");
         setLoading(true)
