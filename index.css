@@ -43,6 +43,11 @@ header > input {
     outline: none;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
     color: white;
+    transition: 0.2s;
+}
+
+header > input:hover {
+    transform: scale(101%);
 }
 
 header > button {
