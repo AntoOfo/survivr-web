@@ -11,10 +11,11 @@ export default function Grid({searchQuery, selectedCategory}) {
 
     const [hacks, setHacks] = useState([]);
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         console.log("Making api call..");
+        setLoading(true)
         // call api
         fetch("http://localhost:8080/lifehacks")
             .then((res) => res.json())  // convert 2 json
@@ -22,7 +23,10 @@ export default function Grid({searchQuery, selectedCategory}) {
                 // save in lifehacks as state
                 setHacks(data);
             })
-            .catch((err) => console.error("Error getting hacks:", err));
+            .catch((err) => console.error("Error getting hacks:", err))
+
+            .finally(() => setLoading(false));
+            
 }, []);
 
     // for search query
@@ -32,6 +36,14 @@ export default function Grid({searchQuery, selectedCategory}) {
 
         return matchesSearch && matchesCategory
     });
+
+    if (loading) {
+        return (
+            <div>
+                <div className="loader"></div>
+            </div>
+        )
+    }
 
     return (
         <main>
