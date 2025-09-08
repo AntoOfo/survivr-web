@@ -197,8 +197,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70vh;
 }
 .loader {
     border: 6px solid #2A2A2A;
     border-top: 6px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
