@@ -103,7 +103,7 @@ header > button:hover {
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30%;
+    width: 10%;
     background: #3e3e3e;
     border-radius: 12px;
     padding: 0.5rem;
@@ -112,10 +112,10 @@ header > button:hover {
 }
 
 .dropdown img {
-    width: 4%;
+    width: 10%;
     position: absolute;
     top: 8%;
-    right: 3%;
+    right: 10%;
     border-radius: 8px;
     transition: 0.2s;
 }
