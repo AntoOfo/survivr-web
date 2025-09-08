@@ -12,9 +12,12 @@ export default function App() {
     <>
     <Header 
       searchQuery={searchQuery}
-      setSearchQuery={setSearchQuery} />
+      setSearchQuery={setSearchQuery}
+      selectedCategory={selectedCategory}
+      setSelectedCategory={setSelectedCategory} />
     <Grid 
-      searchQuery={searchQuery}/>
+      searchQuery={searchQuery}
+      selectedCategory={selectedCategory}/>
     </>
   )
 }
