@@ -1,8 +1,8 @@
 import Placeholder from "../images/helpimg.jpg"
 
-export default function Card({img, title, bio}) {
+export default function Card({img, title, bio, onClick}) {
     return (
-        <div className="card">
+        <div className="card" onClick={onClick}>
             <img src={img} />
             <div className="card-right-side">
             <h2>{title}</h2>
