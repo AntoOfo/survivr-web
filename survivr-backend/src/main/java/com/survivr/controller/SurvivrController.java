@@ -42,6 +42,7 @@ public class SurvivrController {
         public String bio;
         public String image;
         public String category;
+        public String didYouKnow;
     }
     
     @GetMapping("/lifehacks")
@@ -59,7 +60,7 @@ public class SurvivrController {
           "model": "llama-3.3-70b-versatile",
           "messages": [{
             "role": "user",
-            "content": "Return ONLY a JSON array (starting with []) containing 9 unique, practical, and situation-specific survival tips in strict JSON format. Each must include: 1. title, 2. bio (24 - 35 words ONLY, no shorter, no longer. Add a FULL STOP at the end of the bio.), 3. image (use a realistic URL), 4. category (choose from 'Survival', 'Health', 'City Safety', 'Prep'). Rules: 1. DO NOT repeat tips or rephrase the same advice. Every entry must be a distinct situation. 2. Vary the environments (wilderness, urban, disaster, home, weather extremes, medical emergencies). 3. Focus on specific situations, not generic survival themes. 4. Do NOT include a 'content' field. Make sure that the bio itself contains the actual tip, not a tagline. No wrapper objects, just the array."
+            "content": "Return ONLY a JSON array (starting with []) containing 9 unique, practical, and situation-specific survival tips in strict JSON format. Each must include: 1. title, 2. bio (24 - 35 words ONLY, no shorter, no longer. Add a FULL STOP at the end of the bio.), 3. image (use a realistic URL), 4. category (choose from 'Survival', 'Health', 'City Safety', 'Prep'), 5. didYouKnow (a fact with 15 - 20 words ONLY, must relate to the hack). Rules: 1. DO NOT repeat tips or rephrase the same advice. Every entry must be a distinct situation. 2. Vary the environments (wilderness, urban, disaster, home, weather extremes, medical emergencies). 3. Focus on specific situations, not generic survival themes. 4. Do NOT include a 'content' field. Make sure that the bio itself contains the actual tip, not a tagline. No wrapper objects, just the array."
           }]
         }
         """;
