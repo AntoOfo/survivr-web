@@ -68,7 +68,8 @@ export default function Grid({searchQuery, selectedCategory}) {
 
             {showFact && (
                 <div className="fact">
-                    <h2>Fun fact: This is just a test lol.</h2>
+                    <h2>Fun Fact</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum laboriosam quod rem fuga? Quam ab dolores</p>
                 </div>
             )}
         </main>
