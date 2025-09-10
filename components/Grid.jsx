@@ -71,7 +71,7 @@ export default function Grid({searchQuery, selectedCategory}) {
                 <div className="overlay" onClick={() => setSelectedHack(null)}></div>
                 <div className="fact">
                         <h2>Did you know?</h2>
-                        <p>{selectedHack.didYouKnow}</p>
+                        <h3>{selectedHack.didYouKnow}</h3>
                 </div>
                 </>
             )}
