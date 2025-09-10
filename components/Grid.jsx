@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Card from "./Card"
+import CloseIcon from "../images/close.png"
 
 export default function Grid({searchQuery, selectedCategory}) {
 
@@ -70,7 +71,10 @@ export default function Grid({searchQuery, selectedCategory}) {
                 <>
                 <div className="overlay" onClick={() => setSelectedHack(null)}></div>
                 <div className="fact">
-                        <h2>Did you know?</h2>
+                        <span className="fact-top">
+                            <h2>Did you know?</h2>
+                            <img src={CloseIcon} onClick={() => setSelectedHack(null)}/>
+                        </span>
                         <h3>{selectedHack.didYouKnow}</h3>
                 </div>
                 </>
