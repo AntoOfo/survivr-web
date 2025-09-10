@@ -74,7 +74,7 @@ header > button:hover {
     transform: scale(103%);
 }
 
-.dropdown-overlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -223,8 +223,9 @@ main {
     transform: translate(-50%, -50%);
     width: 20%;
     height: auto;
-    background: #3e3e3e;
+    background: #3e3e3ebd;
     border-radius: 12px;
+    box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
     padding: 0.5rem;
     z-index: 1000;
 }

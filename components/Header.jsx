@@ -31,7 +31,7 @@ export default function Header({searchQuery, setSearchQuery, selectedCategory, s
 
             {showDropdown && (
                 <>
-                <div className="dropdown-overlay" onClick={toggleDropdown}></div>
+                <div className="overlay" onClick={toggleDropdown}></div>
                 <div className="dropdown">
                     <img src={CloseIcon} onClick={toggleDropdown}/>
                     <ul>
