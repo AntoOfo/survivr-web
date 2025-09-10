@@ -13,10 +13,10 @@ export default function Grid({searchQuery, selectedCategory}) {
 
     const [loading, setLoading] = useState(true);
 
-    const [showFact, setShowfact] = useState(false);
+    const [selectedHack, setSelectedHack] = useState(null);
 
-    function toggleFact() {
-        setShowfact((prev) => !prev)
+    function toggleFact(hack) {
+        setSelectedHack((prev) => (prev ? null : hack));
     }
 
     useEffect(() => {
@@ -61,17 +61,17 @@ export default function Grid({searchQuery, selectedCategory}) {
                         img={hack.image}
                         title={hack.title}
                         bio={hack.bio}
-                        onClick={toggleFact}/>
+                        onClick={() => toggleFact(hack)}/>
                 ))}
                 
             </div>
 
-            {showFact && (
+            {selectedHack && (
                 <>
-                <div className="overlay" onClick={toggleFact}></div>
+                <div className="overlay" onClick={() => setSelectedHack(null)}></div>
                 <div className="fact">
-                    <h2>Did you know?</h2>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum laboriosam quod rem fuga? Quam ab dolores</p>
+                        <h2>Did you know?</h2>
+                        <p>{selectedHack.didYouKnow}</p>
                 </div>
                 </>
             )}
