@@ -55,6 +55,12 @@ export default function Grid({searchQuery, selectedCategory}) {
     return (
         <main>
             <h2 className="grid-title">Today's Picks - {month}/{day}/{year}</h2>
+
+            {filteredHacks.length === 0 ? (
+                <div className="no-hacks">
+                <h3>No hacks available</h3>
+                </div>
+            ) : (
             <div className="grid">
                 {filteredHacks.map((hack, i) => (
                     <Card
@@ -66,6 +72,7 @@ export default function Grid({searchQuery, selectedCategory}) {
                 ))}
                 
             </div>
+            )}
 
             {selectedHack && (
                 <>

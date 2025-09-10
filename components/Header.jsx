@@ -1,5 +1,5 @@
 import { useState } from "react"
-import FilterIcon from "../images/filter.png"
+import FilterIcon from "../images/filterv2.png"
 import CloseIcon from "../images/close.png"
 
 export default function Header({searchQuery, setSearchQuery, selectedCategory, setSelectedCategory}) {

@@ -59,18 +59,17 @@ header > input:hover {
 }
 
 header > button {
-    width: 40px;
-    height: 30px;
     background-color: #2A2A2A;
     border: none;
     border-radius: 30px;
     height: 45px;
-    width: 7%;
+    width: 4%;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
     transition: 0.2s;
 }
 header > button > img {
-    width: 20px;
+    width: 25px;
+    opacity: 70%;
 }
 
 header > button:active {
@@ -166,7 +165,7 @@ header > button:hover {
 }
 
 .card:hover {
-    scale: 103%;
+    scale: 102%;
     cursor:pointer;
 }
 
@@ -234,7 +233,7 @@ main {
     background: #3e3e3ebd;
     border-radius: 12px;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
-    padding: 0.98rem 0.5rem;
+    padding: 0.98rem 0.7rem;
     z-index: 1000;
     text-align: left;
 }
@@ -249,11 +248,25 @@ main {
 
 .fact-top > img {
     grid-column: 3;
-    width: 12%;
+    width: 9%;
     justify-self: end;
+}
+
+.fact-top > img:hover {
+    background-color: #2e2e2e8a;
+}
+.fact-top > img:hover:active {
+    transform: scale(0.95);
 }
 
 .fact-top > h2 {
     grid-column: 1;
 }
 
+.no-hacks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    text-align: center;
+}
