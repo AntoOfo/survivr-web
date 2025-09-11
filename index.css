@@ -194,6 +194,26 @@ header > button:hover {
   }
 }
 
+@media (max-width: 552px) {
+  .card {
+    height: 140px;
+  }
+}
+
+@media (max-width: 492px) {
+  .card {
+    flex-direction: column;
+    height: 250px;
+  }
+
+  .card > img {
+    aspect-ratio: 18/6;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 12px;
+  }
+}
+
 main {
     margin-top: 30px;
 }
