@@ -182,8 +182,16 @@ header > button:hover {
     margin-top: 4px;
 }
 
-.card-right-side > p {
-    
+@media (max-width: 1200px) {
+  .card {
+    height: 130px; 
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    height: 120px;
+  }
 }
 
 main {
