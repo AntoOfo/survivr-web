@@ -40,7 +40,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 header > input {
     width: 70%;
@@ -213,6 +213,11 @@ header > button:hover {
   .card {
     height: 140px;
   }
+
+  header > button > img {
+    width: 22px;
+  }
+
 }
 
 @media (max-width: 492px) {
@@ -245,7 +250,7 @@ main {
     row-gap: 40px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1240px) {
   .grid {
     grid-template-columns: repeat(2, 1fr); 
   }
@@ -286,7 +291,7 @@ main {
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 25%;
+    width: 350px;
     height: auto;
     background: #3e3e3ebd;
     border-radius: 12px;
@@ -306,8 +311,33 @@ main {
 
 .fact-top > img {
     grid-column: 3;
-    width: 9%;
+    width: 10%;
     justify-self: end;
+}
+
+@media (max-width: 552px) {
+  .fact {
+    width: 250px;
+  }
+  
+  .fact-top > img {
+    width: 14%;
+  }
+}
+
+@media (max-width: 492px) { 
+    .fact {
+        width: 200px;
+    }
+    .fact-top > h2 {
+        font-size: smaller;
+    }
+    .fact > h3 {
+        font-size: smaller;
+    }
+    .fact-top > img {
+        width: 18%;
+    }
 }
 
 .fact-top > img:hover {
