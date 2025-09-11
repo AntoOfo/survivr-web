@@ -40,6 +40,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 header > input {
     width: 70%;
@@ -79,6 +80,20 @@ header > button:active {
 header > button:hover {
     cursor: pointer;
     transform: scale(103%);
+}
+
+@media (max-width: 492px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    header > input {
+        width: 100%;
+    }
+    header > button {
+        display: none;
+    }
+    
 }
 
 .overlay {
