@@ -91,6 +91,19 @@ export default function Grid({searchQuery, selectedCategory}) {
                 </div>
                 </>
             )}
+
+            {error && (
+                <>
+                    <div className="overlay" onClick={() => setError(null)}></div>
+                    <div className="fact">
+                    <span className="fact-top">
+                        <h2>Hey!</h2>
+                        <img src={CloseIcon} onClick={() => setError(null)} />
+                    </span>
+                    <h3>{error}</h3>
+                    </div>
+                </>
+            )}
         </main>
     )
 }
