@@ -192,7 +192,9 @@ header > button:hover {
 }
 
 .card:hover {
-    scale: 102%;
+    scale: 101.5%;
+    border-color: rgba(255, 255, 255, 0.167);
+    background-color: #282828;
     cursor:pointer;
 }
 
