@@ -29,6 +29,7 @@ export default function Header({searchQuery, setSearchQuery, selectedCategory, s
                 <img src={FilterIcon}/>
             </button>
 
+            {/* if showDropdown true*/}
             {showDropdown && (
                 <>
                 <div className="overlay" onClick={toggleDropdown}></div>

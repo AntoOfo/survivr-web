@@ -32,7 +32,7 @@ export default function Grid({searchQuery, selectedCategory}) {
             })
             .catch((err) => console.error("Error getting hacks:", err))
 
-            .finally(() => setLoading(false));
+            .finally(() => setLoading(false));  // stop spinner
             
 }, []);
 
@@ -56,7 +56,7 @@ export default function Grid({searchQuery, selectedCategory}) {
         <main>
             <h2 className="grid-title">Today's Picks - {month}/{day}/{year}</h2>
 
-            {filteredHacks.length === 0 ? (
+            {filteredHacks.length === 0 ? (  // if array is empty
                 <div className="no-hacks">
                 <h3>No hacks available</h3>
                 </div>
@@ -74,6 +74,7 @@ export default function Grid({searchQuery, selectedCategory}) {
             </div>
             )}
 
+            {/* if isnt null*/}
             {selectedHack && (
                 <>
                 <div className="overlay" onClick={() => setSelectedHack(null)}></div>

@@ -134,6 +134,9 @@ header > button:hover {
     max-width: 150px;
     background: #3e3e3ebd;
     border-radius: 12px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.073);
+    border-width: 0.1px;
     padding: 0.5rem;
     z-index: 1000;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
@@ -303,6 +306,9 @@ main {
     height: auto;
     background: #3e3e3ebd;
     border-radius: 12px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.073);
+    border-width: 0.1px;
     box-shadow: 3px 5px 27px -15px rgba(0,0,0,0.63);
     padding: 0.98rem 0.7rem;
     z-index: 1000;
