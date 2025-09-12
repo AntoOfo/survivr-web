@@ -16,6 +16,8 @@ export default function Grid({searchQuery, selectedCategory}) {
 
     const [selectedHack, setSelectedHack] = useState(null);
 
+    const [error, setError] = useState(null)
+
     function toggleFact(hack) {
         setSelectedHack((prev) => (prev ? null : hack));
     }
@@ -30,12 +32,14 @@ export default function Grid({searchQuery, selectedCategory}) {
                 // save in lifehacks as state
                 setHacks(data);
             })
-            .catch((err) => console.error("Error getting hacks:", err))
+            .catch(() => {
+                setError("This site has gone to sleep due to inactivity. Refresh to wake it up!");
+            })
 
             .finally(() => setLoading(false));  // stop spinner
             
-}, []);
-
+        }, []);
+        
     // for search query
     const filteredHacks = hacks.filter((hack) => {
         const matchesSearch = hack.title.toLowerCase().includes(searchQuery.toLowerCase());
