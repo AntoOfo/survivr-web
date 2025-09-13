@@ -2,7 +2,10 @@ import { useEffect, useState } from "react"
 import Card from "./Card"
 import CloseIcon from "../images/close.png"
 
+
 export default function Grid({searchQuery, selectedCategory}) {
+
+    const API_URL = import.meta.env.VITE_API_URL;
 
     // current date
     const date = new Date();
@@ -26,7 +29,7 @@ export default function Grid({searchQuery, selectedCategory}) {
         console.log("Making api call..");
         setLoading(true)
         // call api
-        fetch("http://localhost:8080/lifehacks")
+        fetch({API_URL})
             .then((res) => res.json())  // convert 2 json
             .then((data) => {
                 // save in lifehacks as state
