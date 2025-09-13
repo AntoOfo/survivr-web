@@ -29,7 +29,7 @@ export default function Grid({searchQuery, selectedCategory}) {
         console.log("Making api call..");
         setLoading(true)
         // call api
-        fetch(`${API_URL}/lifehacks`)
+        fetch(API_URL)
             .then((res) => res.json())  // convert 2 json
             .then((data) => {
                 // save in lifehacks as state
