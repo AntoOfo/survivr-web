@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
  * @author anton
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://survivr.vercel.app/")
 public class SurvivrController {
     
     @Value("${groq.api.key}")
