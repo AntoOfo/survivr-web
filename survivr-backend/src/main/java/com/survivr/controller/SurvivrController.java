@@ -127,4 +127,9 @@ public class SurvivrController {
                 }
             });
 }
+    
+        @GetMapping("/ping")
+        public Mono<String> ping() {
+            return Mono.just("All good over here..");
+        }
     }
